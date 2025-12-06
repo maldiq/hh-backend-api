@@ -1,0 +1,151 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "HyperHire PHP Backend API",
+        "description": "API documentation for Tinder-like backend.",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/people": {
+            "get": {
+                "tags": [
+                    "Person"
+                ],
+                "summary": "List people",
+                "operationId": "55f6f7c0a6d6a11cd56da8c7e7513f41",
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Items per page",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "location",
+                        "in": "query",
+                        "description": "Filter by location",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "min_age",
+                        "in": "query",
+                        "description": "Minimum age",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/people/{person}/like": {
+            "post": {
+                "tags": [
+                    "Person"
+                ],
+                "summary": "Like a person",
+                "operationId": "949e15bdb47e1f8689f917d85294c1e2",
+                "parameters": [
+                    {
+                        "name": "person",
+                        "in": "path",
+                        "description": "Person ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "user_id"
+                                ],
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Liked"
+                    }
+                }
+            }
+        },
+        "/api/people/{person}/dislike": {
+            "post": {
+                "tags": [
+                    "Person"
+                ],
+                "summary": "Dislike a person",
+                "operationId": "b534611188d4924dce8587394469643f",
+                "parameters": [
+                    {
+                        "name": "person",
+                        "in": "path",
+                        "description": "Person ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Disliked"
+                    }
+                }
+            }
+        },
+        "/api/people/{person}/liked-list": {
+            "get": {
+                "tags": [
+                    "Person"
+                ],
+                "summary": "List users who liked this person",
+                "operationId": "80ffe9cce264c2694000e275b580d222",
+                "parameters": [
+                    {
+                        "name": "person",
+                        "in": "path",
+                        "description": "Person ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Person",
+            "description": "Person recommendation, like, dislike API"
+        }
+    ]
+}
