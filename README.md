@@ -67,5 +67,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Screenshot
 
-![Swagger UI]([https://raw.githubusercontent.com/username/repo/branch/folder/gambar.png](https://github.com/maldiq/hh-backend-api/blob/main/FireShot%20Capture%20005%20-%20L5%20Swagger%20UI%20-%20localhost.png))
+![Swagger UI](https://raw.githubusercontent.com/maldiq/hh-backend-api/refs/heads/main/FireShot%20Capture%20005%20-%20L5%20Swagger%20UI%20-%20localhost.png)
+
 
